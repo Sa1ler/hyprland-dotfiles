@@ -19,13 +19,22 @@
 ---
 
 ## 🚀 Быстрый старт (для новой системы установка+настройка)
+
+Подключеник к сети:
 ```bash
 iwctl
 device list
 station wlan0 scan
 station wlan0 get-networks
 station wlan0 connect ""
+```
 
+Установка системы:
+```bash
+archinstall
+```
+
+Копирование конфигов:
 ```bash
 git@github.com:Sa1ler/hyprland-dotfiles.git
 cd hyprland-dotfiles
