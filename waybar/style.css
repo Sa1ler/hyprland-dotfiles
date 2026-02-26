@@ -31,7 +31,7 @@ window#waybar.hidden {
 ========================= */
 
 #workspaces,
-
+#window,
 #clock,
 #memory,
 #battery,
@@ -55,7 +55,7 @@ window#waybar.hidden {
 
 /* hover — мягкое появление сегмента */
 #workspaces:hover,
-
+#window:hover,
 #clock:hover,
 #memory:hover,
 #battery:hover,
@@ -100,7 +100,14 @@ window#waybar.hidden {
     font-weight: bold;
 }
 
+/* =========================
+   WINDOW TITLE
+========================= */
 
+#window {
+    color: #cdd6f4;
+    font-weight: 500;
+}
 
 /* =========================
    CLOCK (CENTER ANCHOR)

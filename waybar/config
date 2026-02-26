@@ -9,7 +9,8 @@
   "margin-right": 5,
 
   "modules-left": [
-    "hyprland/workspaces"
+    "hyprland/workspaces",
+    "hyprland/window"
   ],
 
   "modules-center": [
@@ -46,6 +47,17 @@
     }
   },
 
+  "hyprland/window": {
+    "format": "{}",
+    "rewrite": {
+      "(.*) - Terminal": " Terminal",
+      "(.*) - Kitty": " Terminal",
+      "^$": "Desktop",
+      "(.*)": "$1"
+    },
+    "separate-outputs": true,
+    "max-length": 30
+  },
 
   "clock": {
     "timezone": "Europe/Moscow",
