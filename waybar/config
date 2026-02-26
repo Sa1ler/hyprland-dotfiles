@@ -1,0 +1,143 @@
+{
+  "style": "/home/rel/.config/waybar/style-current.css",
+  "layer": "top",
+  "position": "top",
+  "height": 25,
+  "spacing": 1,
+  "margin-top": 5,
+  "margin-left": 5,
+  "margin-right": 5,
+
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/window"
+  ],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "pulseaudio",
+    "battery",
+    "temperature",
+    "network",
+    "memory",
+    "custom/keyboard",
+    "custom/power"
+  ],
+
+
+  "custom/internetspeed": {
+    "format": "{}",
+    "exec": "$HOME/.config/waybar/internet-speed.sh",
+    "return-type": "json",
+    "interval": 2
+  },
+
+  "memory": {
+    "interval": 30,
+    "format": "󰍛 {percentage}%",
+    "max-length": 20,
+    "tooltip": false
+  },
+
+  "custom/power": {
+    "format": "⏻",
+    "tooltip": false,
+    "on-click": "wlogout -b 5"
+  },
+
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format-icons": {
+      "1": "󰄯",
+      "2": "󰄯",
+      "3": "󰄯",
+      "4": "󰄯",
+      "5": "󰄯",
+      "6": "󰄯",
+      "7": "󰄯",
+      "8": "󰄯",
+      "9": "󰄯",
+      "10": "󰄯",
+      "urgent": "",
+      "focused": "󰮯",
+      "default": "󰝥"
+    }
+  },
+
+  "hyprland/window": {
+    "format": "{}",
+    "rewrite": {
+      "(.*) - Terminal": " Terminal",
+      "(.*) - Kitty": " Terminal",
+      "^$": "Desktop",
+      "(.*)": "$1"
+    },
+    "separate-outputs": true,
+    "max-length": 30
+  },
+
+  "clock": {
+    "timezone": "Europe/Moscow",
+    "format": "{:%d %B %Y • %H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+
+  "temperature": {
+    "thermal-zone": 2,
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 80,
+    "format": " {temperatureC}°C",
+    "format-critical": " {temperatureC}°C",
+    "interval": 5
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time}",
+    "format-full": "󰁹 {capacity}%",
+    "format-icons": ["󰁺","󰁼","󰁾","󰂀","󰁹"]
+  },
+
+  "network": {
+    "format-wifi": " ",
+    "format-ethernet": "󰈁",
+    "tooltip-format-wifi": "{essid}",
+    "tooltip-format": "{ifname} via {gwaddr}",
+    "format-linked": "{ifname} (No IP)",
+    "format-disconnected": "󰖪 ",
+    "max-length": 7,
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+
+  "pulseaudio": {
+    "format": "  {volume}%",
+    "format-bluetooth": "  {volume}%",
+    "format-bluetooth-muted": "󰝟",
+    "format-muted": "󰝟",
+    "format-source": "{volume}%",
+    "format-source-muted": "󰝟",
+    "on-click": "pavucontrol"
+  },
+
+
+  "custom/screenshot": {
+    "format": "PrtSc",
+    "tooltip": "Screenshot",
+    "on-click": "grimblast copy area"
+  },
+
+
+"custom/keyboard": {
+    "exec": "~/.config/waybar/keyboard-status.sh",
+    "return-type": "json",
+    "interval": 1,
+    "on-click": "~/.config/waybar/keyboard-toggle.sh",
+    "tooltip": false
+  }
+}
