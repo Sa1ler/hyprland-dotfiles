@@ -9,10 +9,13 @@
   "margin-right": 5,
 
   "modules-left": [
-    "hyprland/workspaces",
-    "hyprland/window"
+    "hyprland/workspaces"
   ],
-  "modules-center": ["clock"],
+
+  "modules-center": [
+    "clock"
+  ],
+
   "modules-right": [
     "pulseaudio",
     "battery",
@@ -22,27 +25,6 @@
     "custom/keyboard",
     "custom/power"
   ],
-
-
-  "custom/internetspeed": {
-    "format": "{}",
-    "exec": "$HOME/.config/waybar/internet-speed.sh",
-    "return-type": "json",
-    "interval": 2
-  },
-
-  "memory": {
-    "interval": 30,
-    "format": "󰍛 {percentage}%",
-    "max-length": 20,
-    "tooltip": false
-  },
-
-  "custom/power": {
-    "format": "⏻",
-    "tooltip": false,
-    "on-click": "wlogout -b 5"
-  },
 
   "hyprland/workspaces": {
     "disable-scroll": true,
@@ -64,22 +46,17 @@
     }
   },
 
-  "hyprland/window": {
-    "format": "{}",
-    "rewrite": {
-      "(.*) - Terminal": " Terminal",
-      "(.*) - Kitty": " Terminal",
-      "^$": "Desktop",
-      "(.*)": "$1"
-    },
-    "separate-outputs": true,
-    "max-length": 30
-  },
 
   "clock": {
     "timezone": "Europe/Moscow",
     "format": "{:%d %B %Y • %H:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+
+  "memory": {
+    "interval": 30,
+    "format": "󰍛 {percentage}%",
+    "tooltip": false
   },
 
   "temperature": {
@@ -99,7 +76,6 @@
     "format": "{icon} {capacity}%",
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
-    "format-alt": "{time}",
     "format-full": "󰁹 {capacity}%",
     "format-icons": ["󰁺","󰁼","󰁾","󰂀","󰁹"]
   },
@@ -107,37 +83,29 @@
   "network": {
     "format-wifi": " ",
     "format-ethernet": "󰈁",
-    "tooltip-format-wifi": "{essid}",
-    "tooltip-format": "{ifname} via {gwaddr}",
-    "format-linked": "{ifname} (No IP)",
     "format-disconnected": "󰖪 ",
-    "max-length": 7,
-    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    "tooltip-format-wifi": "{essid}",
+    "max-length": 7
   },
 
   "pulseaudio": {
     "format": "  {volume}%",
-    "format-bluetooth": "  {volume}%",
-    "format-bluetooth-muted": "󰝟",
     "format-muted": "󰝟",
-    "format-source": "{volume}%",
-    "format-source-muted": "󰝟",
+    "format-bluetooth": "  {volume}%",
     "on-click": "pavucontrol"
   },
 
-
-  "custom/screenshot": {
-    "format": "PrtSc",
-    "tooltip": "Screenshot",
-    "on-click": "grimblast copy area"
-  },
-
-
-"custom/keyboard": {
+  "custom/keyboard": {
     "exec": "~/.config/waybar/keyboard-status.sh",
     "return-type": "json",
     "interval": 1,
     "on-click": "~/.config/waybar/keyboard-toggle.sh",
     "tooltip": false
+  },
+
+  "custom/power": {
+    "format": "⏻",
+    "tooltip": false,
+    "on-click": "wlogout -b 5"
   }
 }
