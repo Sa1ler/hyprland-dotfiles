@@ -18,8 +18,14 @@
 
 ---
 
-## 🚀 Быстрый старт (для новой системы)
+## 🚀 Быстрый старт (для новой системы установка+настройка)
+```bash
+iwctl
+device list
+station wlan0 scan
+station wlan0 get-networks
+station wlan0 connect ""
 
 ```bash
-git clone git@github.com:Sa1ler/hyprland-dotfiles.git
+git@github.com:Sa1ler/hyprland-dotfiles.git
 cd hyprland-dotfiles
