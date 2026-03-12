@@ -182,3 +182,14 @@ tooltip label {
     0% { opacity: 1; }
     100% { opacity: 0.5; }
 }
+
+#custom-layouts {
+  padding: 0 10px;
+  font-size: 16px;
+  color: #89b4fa;
+  transition: color 0.2s ease;
+}
+
+#custom-layouts:hover {
+  color: #cba6f7;
+}
